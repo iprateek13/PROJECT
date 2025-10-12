@@ -1,0 +1,15 @@
+# Node dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Environment files
+.env
+backend/.env
+frontend/.env
+
+# Build files (agar React ka build bhi upload nahi karna)
+frontend/build/
+
+# Logs
+*.log
