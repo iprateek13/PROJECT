@@ -58,17 +58,23 @@ app.get("/listings/:id/edit", async (req, res) => {
 });
 //put  edit route
 app.put("/listings/:id", async (req, res) => {
-  const updatedListing = await Listing.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    {
-      new: true,
-      runValidators: true,
-    }
-  );
-  // console.log(updatedListing);
-  res.redirect("/listings");
+  const { title, description, price, country, location, image } = req.body;
+  const listing = await Listing.findById(req.params.id);
+  // Update fields
+  listing.title = title;
+  listing.description = description;
+  listing.price = price;
+  listing.country = country;
+  listing.location = location;
+
+  // Update image only if it exists in form
+  if (image) {
+    listing.image.url = image;  // keep the object structure intact
+  }
+  await listing.save();
+  res.redirect(`/listings/${req.params.id}`);
 });
+
 //delete route
 app.delete("/listings/:id", async (req, res) => {
   let { id } = req.params;

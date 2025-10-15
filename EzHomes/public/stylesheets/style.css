@@ -1,3 +1,15 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container{
+  flex:1;
+}
 .navbar {
   height: 4rem;
   background-color: white;
@@ -10,7 +22,7 @@
 }
 
 .fa-brands:hover {
-  color: #6A9CFD;
+  color: #6a9cfd;
 }
 
 .nav-link {
@@ -49,4 +61,52 @@
 .f-info-socials i {
   font-size: 1.2rem;
   margin-right: 0.5rem;
+}
+/* card */
+.card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+.card-body {
+  padding: 0 !important;
+}
+.card-text p {
+  font-weight: 400 !important;
+}
+.listing-links {
+  text-decoration: none !important;
+}
+/* card effect */
+.card-img-overlay {
+  opacity: 0;
+}
+.card-img-overlay:hover {
+  opacity: 0.1 !important;
+  background-color: rgb(255, 255, 255) !important;
+}
+footer {
+  background-color: #eaeaea; /* halki grey */
+  padding: 20px;             /* thoda spacing */
+  text-align: center;        /* text center me */
+}
+.btn-color{
+  background-color: #6a9cfd;
+  border: none;
+}
+/* show-page-img */
+.show-img{
+height:30vh ;
+}
+.btns{
+  display: flex; 
+  margin-bottom: 2rem;
+}
+.show-card{
+  padding-left: 0;
+  padding-right: 0;
 }
