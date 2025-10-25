@@ -7,8 +7,8 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-.container{
-  flex:1;
+.container {
+  flex: 1;
 }
 .navbar {
   height: 4rem;
@@ -22,7 +22,7 @@ body {
 }
 
 .fa-brands:hover {
-  color: #6a9cfd;
+  color: #0e3a91;
 }
 
 .nav-link {
@@ -91,22 +91,30 @@ body {
 }
 footer {
   background-color: #eaeaea; /* halki grey */
-  padding: 20px;             /* thoda spacing */
-  text-align: center;        /* text center me */
+  padding: 20px; /* thoda spacing */
+  text-align: center; /* text center me */
 }
-.btn-color{
-  background-color: #6a9cfd;
+.btn-color {
+  background-color: #dc852e;
   border: none;
 }
 /* show-page-img */
-.show-img{
-height:30vh ;
+.show-img {
+  height: 30vh;
 }
-.btns{
-  display: flex; 
+.btns {
+  display: flex;
   margin-bottom: 2rem;
 }
-.show-card{
+.show-card {
   padding-left: 0;
   padding-right: 0;
+}
+.show-card img {
+  width: 100%;
+  height: 350px; /* fix ek height for uniform look */
+  object-fit: cover; /* crop to maintain ratio */
+  object-position: center;
+  image-orientation: from-image; /* handle EXIF orientation */
+  border-radius: 8px;
 }

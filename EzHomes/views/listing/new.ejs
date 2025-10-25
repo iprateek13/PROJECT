@@ -1,9 +1,10 @@
-<% layout("/layouts/boilerplate.ejs") %>
+<% layout("layouts/boilerplate") %>   
+
+
 <body>
   <div class="col-8 offset-2">
     <h4 class="my-4">Create a New Listing</h4>
-    <form action="/listings" method="post">
-      
+    <form action="/listings" method="post" class="needs-validation" novalidate>
       <!-- Title -->
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -13,7 +14,10 @@
           placeholder="Enter title"
           name="title"
           class="form-control"
+          required
         />
+        <div class="valid-feedback">Title looks good</div>
+        <div class="invalid-feedback">Please enter a title</div>
       </div>
 
       <!-- Description -->
@@ -25,7 +29,10 @@
           class="form-control"
           placeholder="Enter description"
           rows="3"
+          required
         ></textarea>
+        <div class="invalid-feedback">Please enter a short description</div>
+        <div class="valid-feedback">Description looks fine</div>
       </div>
 
       <!-- Image URL -->
@@ -34,10 +41,13 @@
         <input
           id="image"
           class="form-control"
-          type="text"
+          type="url"
           placeholder="Enter image URL"
           name="image"
+          required
         />
+        <div class="invalid-feedback">Please enter a valid image URL</div>
+        <div class="valid-feedback">Image URL looks good</div>
       </div>
 
       <!-- Price & Country (same row) -->
@@ -47,10 +57,12 @@
           <input
             id="price"
             class="form-control"
-            type="number"
             placeholder="Enter price"
             name="price"
+            required
           />
+          <div class="invalid-feedback">Please enter a valid price</div>
+          <div class="valid-feedback">Price looks good</div>
         </div>
         <div class="col-md-8">
           <label for="country" class="form-label">Country</label>
@@ -60,7 +72,10 @@
             name="country"
             placeholder="Enter country"
             class="form-control"
+            required
           />
+          <div class="invalid-feedback">Please enter your country name</div>
+          <div class="valid-feedback">Country looks fine</div>
         </div>
       </div>
 
@@ -73,11 +88,14 @@
           type="text"
           placeholder="Enter location"
           name="location"
+          required
         />
+        <div class="invalid-feedback">Please enter your location</div>
+        <div class="valid-feedback">Location looks good</div>
       </div>
 
       <!-- Submit button -->
-      <button class="btn btn-color btn-dark mt-3 mb-3">Add Listing</button>
+      <button class="btn btn-dark mt-3 mb-3" type="submit">Add Listing</button>
     </form>
   </div>
 </body>
